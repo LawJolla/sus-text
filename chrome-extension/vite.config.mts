@@ -37,7 +37,7 @@ export default defineConfig({
       name: 'BackgroundScript',
       fileName: 'background',
       formats: ['es'],
-      entry: resolve(srcDir, 'background', 'index.ts'),
+      entry: resolve(rootDir, '..', 'pages', 'background', 'src', 'index.ts'),
     },
     outDir,
     emptyOutDir: false,

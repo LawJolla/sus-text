@@ -29,8 +29,8 @@ const manifest = {
   },
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
-  host_permissions: ['<all_urls>'],
-  permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel'],
+  host_permissions: ['*://voice.google.com/*', 'http://localhost:11434/*'],
+  permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel', 'activeTab'],
   options_page: 'options/index.html',
   background: {
     service_worker: 'background.js',
@@ -48,15 +48,16 @@ const manifest = {
   },
   content_scripts: [
     {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      matches: ['*://voice.google.com/*'],
       js: ['content/index.iife.js'],
+      run_at: 'document_end',
     },
     {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      matches: ['*://voice.google.com/*'],
       js: ['content-ui/index.iife.js'],
     },
     {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      matches: ['*://voice.google.com/*'],
       css: ['content.css'],
     },
   ],
@@ -64,7 +65,7 @@ const manifest = {
   web_accessible_resources: [
     {
       resources: ['*.js', '*.css', '*.svg', 'icon-128.png', 'icon-34.png'],
-      matches: ['*://*/*'],
+      matches: ['*://voice.google.com/*'],
     },
   ],
   side_panel: {

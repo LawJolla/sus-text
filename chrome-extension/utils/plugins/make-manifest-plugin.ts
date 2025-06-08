@@ -21,6 +21,17 @@ const refreshFilePath = resolve(
   'refresh.js',
 );
 
+const contentCssSourcePath = resolve(
+  import.meta.dirname,
+  '..',
+  '..',
+  '..',
+  'pages',
+  'content-ui',
+  'dist',
+  'tailwind-output.css',
+);
+
 const withHMRId = (code: string) => {
   return `(function() {let __HMR_ID = 'chrome-extension-hmr';${code}\n})();`;
 };
@@ -57,6 +68,15 @@ export default (config: { outDir: string }): PluginOption => {
 
     if (IS_DEV) {
       writeFileSync(resolve(to, 'refresh.js'), withHMRId(refreshFileString));
+    }
+
+    // Copy content.css from content-ui build
+    if (existsSync(contentCssSourcePath)) {
+      const contentCssContent = readFileSync(contentCssSourcePath, 'utf-8');
+      writeFileSync(resolve(to, 'content.css'), contentCssContent);
+      colorLog(`Content CSS copy complete: ${resolve(to, 'content.css')}`, 'success');
+    } else {
+      colorLog(`Content CSS source not found: ${contentCssSourcePath}`, 'warning');
     }
 
     colorLog(`Manifest file copy complete: ${manifestPath}`, 'success');

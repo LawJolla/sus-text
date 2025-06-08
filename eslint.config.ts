@@ -55,6 +55,9 @@ export default ts.config(
       'import-x/no-named-as-default-member': 'off',
       '@typescript-eslint/consistent-type-imports': 'error',
       'react/prop-types': 'off',
+      semi: ['error', 'never'],
+      '@typescript-eslint/semi': ['error', 'never'],
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
     linterOptions: {
       reportUnusedDisableDirectives: 'error',

@@ -1,11 +1,11 @@
 {
   "extensionDescription": {
     "description": "Extension description",
-    "message": "Chrome extension boilerplate developed with Vite, React and Typescript"
+    "message": "Sus Google Voice texts?  Let your friendly LLM handle it."
   },
   "extensionName": {
     "description": "Extension name",
-    "message": "Chrome extension boilerplate"
+    "message": "Sus Texts"
   },
   "toggleTheme": {
     "message": "Toggle theme"

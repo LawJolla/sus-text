@@ -16,8 +16,8 @@
     "resolveJsonModule": true,
     "noImplicitReturns": true,
     "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "target": "ESNext",
     "lib": ["DOM", "ESNext"],
     "types": ["node", "chrome"]

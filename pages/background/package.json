@@ -1,0 +1,22 @@
+{
+  "name": "background",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "clean:bundle": "rimraf dist",
+    "clean:turbo": "rimraf .turbo",
+    "clean:node_modules": "rimraf node_modules",
+    "clean": "pnpm clean:bundle && pnpm clean:turbo && pnpm clean:node_modules"
+  },
+  "dependencies": {
+    "ai": "^4.3.14",
+    "ollama-ai-provider": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.304",
+    "typescript": "^5",
+    "vite": "^6"
+  }
+}
