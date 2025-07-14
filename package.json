@@ -39,7 +39,7 @@
     "module-manager": "pnpm -F module-manager start"
   },
   "dependencies": {
-    "ai": "^4.3.14",
+    "ai": "^4.3.17",
     "ollama-ai-provider": "^1.2.0",
     "react": "^19",
     "react-dom": "^19"
